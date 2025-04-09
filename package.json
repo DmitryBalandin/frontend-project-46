@@ -1,0 +1,19 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "difference distiction",
+  "main": "gendiff.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmitryBalandin/frontend-project-46.git"
+  },
+  "author": "Dmitry Balandin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmitryBalandin/frontend-project-46/issues"
+  },
+  "homepage": "https://github.com/DmitryBalandin/frontend-project-46#readme"
+}
