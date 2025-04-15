@@ -1,6 +1,9 @@
+import { sortAndCopyObject } from "./helpers/helpers.js";
+
 
 export default function compareFile(objFirst, objSecond) {
-    const objDiff = { ...objFirst, ...objSecond };
+    const objDiff = sortAndCopyObject({ ...objFirst, ...objSecond });
+    
     const objResult = {};
     for (const [key, value] of Object.entries(objDiff)) {
       if (Object.hasOwn(objFirst, key) && Object.hasOwn(objSecond, key)) {
