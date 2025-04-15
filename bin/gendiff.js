@@ -11,12 +11,12 @@ program
   .argument('<filepath2>')
   .action((filepath1, filepath2, options) =>{
     const diffObj = app(filepath1,filepath2);
+    console.log(diffObj);
     let sringObj = '{';
     for(const [key, value] of Object.entries(diffObj)){
       sringObj = `${sringObj}\n ${key}: ${value}`;
     }
     sringObj = `${sringObj}\n}`;
-    console.log(sringObj);
   });
 
 

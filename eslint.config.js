@@ -6,6 +6,12 @@ import stylisticJs from '@stylistic/eslint-plugin-js';
 export default defineConfig([
   { files: ["**/*.{js,mjs,cjs}"], plugins: { js }, extends: ["js/recommended"] },
   { files: ["**/*.{js,mjs,cjs}"], languageOptions: { globals: { ...globals.browser, ...globals.node } } },
+//   {
+// 	"files": ["tests/**/*"],
+// 	"env": {
+// 	  "jest": true
+// 	}},
+	  
   {
     plugins: {
       '@stylistic/js': stylisticJs
@@ -19,4 +25,5 @@ export default defineConfig([
       "@stylistic/js/semi": ["error"]
     },
   },
+  
 ]);
