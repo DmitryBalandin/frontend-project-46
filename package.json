@@ -5,7 +5,8 @@
   "main": "bin/gendiff.js",
   "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test-watch": "jest --watch"
   },
   "bin": {
     "gendiff": "bin/gendiff.js"
