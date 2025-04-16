@@ -6,11 +6,11 @@ import stylisticJs from '@stylistic/eslint-plugin-js';
 export default defineConfig([
   { files: ["**/*.{js,mjs,cjs}"], plugins: { js }, extends: ["js/recommended"] },
   { files: ["**/*.{js,mjs,cjs}"], languageOptions: { globals: { ...globals.browser, ...globals.node } } },
-//   {
-// 	"files": ["tests/**/*"],
-// 	"env": {
-// 	  "jest": true
-// 	}},
+  //   {
+  // 	"files": ["tests/**/*"],
+  // 	"env": {
+  // 	  "jest": true
+  // 	}},
 	  
   {
     plugins: {
