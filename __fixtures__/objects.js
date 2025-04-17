@@ -25,7 +25,7 @@ export const objSort2 = {
 
 export const diffObj1WithObj2 = {
   '- follow': false,
-  'host': 'hexlet.io',
+  '  host': 'hexlet.io',
   '- proxy': '123.234.53.22',
   '- timeout': 50,
   '+ timeout': 20,
@@ -34,7 +34,7 @@ export const diffObj1WithObj2 = {
 
 export const diffObj2WithObj1 = {
   '+ follow': false,
-  'host': 'hexlet.io',
+  '  host': 'hexlet.io',
   '+ proxy': '123.234.53.22',
   '- timeout': 20,
   '+ timeout': 50,
