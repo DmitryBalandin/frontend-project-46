@@ -12,7 +12,7 @@ export default function compareFile(objFirst, objSecond) {
       } else if (objFirst[key] === objSecond[key]) {
         objResult[`  ${key}`] = value;
       } else {
-        objResult[`- ${key}`] =  (typeof objFirst[key] === 'object' && objFirst[key] !== null) ? compareFile(objFirst[key], objFirst[key]) : objFirst[key];;
+        objResult[`- ${key}`] = (typeof objFirst[key] === 'object' && objFirst[key] !== null) ? compareFile(objFirst[key], objFirst[key]) : objFirst[key];
         objResult[`+ ${key}`] = (typeof objSecond[key] === 'object' && objSecond[key] !== null) ? compareFile(objSecond[key], objSecond[key]) : objSecond[key];
       }
     } else if (!Object.hasOwn(objFirst, key)) {

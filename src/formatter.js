@@ -1,11 +1,11 @@
-export default function  formatter(json, formatter = "stylish") {
-    let replacer, spacesCount;
-    switch(formatter){
-      case "stylish":
-        replacer = ' ';
-        spacesCount = 4;
-        break
-    }
+export default function formatter(json, formatter = "stylish") {
+  let replacer, spacesCount;
+  switch(formatter){
+  case "stylish":
+    replacer = ' ';
+    spacesCount = 4;
+    break;
+  }
   const iter = (currentValue, depth) => {
     if (typeof currentValue !== 'object' || currentValue === null) {
       return `${currentValue}`;
@@ -26,7 +26,7 @@ export default function  formatter(json, formatter = "stylish") {
   };
 
   return iter(json, 1);
-};
+}
 
 
 

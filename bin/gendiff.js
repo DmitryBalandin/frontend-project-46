@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { Command } from "commander";
 import app from '../src/index.js';
-import formatter from '../src/formatter.js'
+import formatter from '../src/formatter.js';
 const program = new Command();
 program
   .name('gendiff')
