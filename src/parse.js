@@ -1,12 +1,12 @@
-import { transformYamltoJSON } from "./helpers/helpers.js";
+import { transformYamltoJSON, } from './helpers/helpers.js';
 
-export default (file, typeFail) => {
+export default (file, typeFail,) => {
   switch (typeFail) {
   case '.json':
-    return JSON.parse(file);
+    return JSON.parse(file,);
   case '.yml':
   case '.yaml':
-    return transformYamltoJSON(file);
+    return transformYamltoJSON(file,);
   default:
     return {};
   }
