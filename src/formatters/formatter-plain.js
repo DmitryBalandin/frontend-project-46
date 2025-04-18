@@ -9,6 +9,7 @@ export default function formatterPlain(json) {
     }
     return value;
   };
+  
   const iter = (path, json) => {
     const keys = Object.keys(json);
     keys.forEach((key, index, array) => {

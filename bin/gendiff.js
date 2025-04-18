@@ -21,3 +21,4 @@ program.parse();
 // gendiff fileDeep1.json fileDeep2.json
 // gendiff fileDeep1.yaml fileDeep2.yaml --format stylish
 // gendiff fileDeep1.yaml fileDeep2.yaml --format plain
+// gendiff fileDeep1.yaml fileDeep2.yaml --format json
