@@ -1,11 +1,11 @@
 import js from '@eslint/js';
 import globals from 'globals';
-import { defineConfig, } from 'eslint/config';
+import { defineConfig } from 'eslint/config';
 import stylisticJs from '@stylistic/eslint-plugin-js';
 
 export default defineConfig([
-  { files: ['**/*.{js,mjs,cjs}',], plugins: { js, }, extends: ['js/recommended',], },
-  { files: ['**/*.{js,mjs,cjs}',], languageOptions: { globals: { ...globals.browser, ...globals.node, }, }, },
+  { files: ['**/*.{js,mjs,cjs}'], plugins: { js }, extends: ['js/recommended'] },
+  { files: ['**/*.{js,mjs,cjs}'], languageOptions: { globals: { ...globals.browser, ...globals.node } } },
   //   {
   // 	"files": ["tests/**/*"],
   // 	"env": {
@@ -21,11 +21,11 @@ export default defineConfig([
       'no-undef': 'warn',
       '@stylistic/js/no-multi-spaces': 'error',
       '@stylistic/js/no-extra-semi': 'error',
-      '@stylistic/js/indent': ['error', 2,],
-      '@stylistic/js/semi': ['error',],
-      '@stylistic/js/quotes': ['error', 'single',],
-      '@stylistic/js/comma-dangle': ['error', 'always',],
+      '@stylistic/js/indent': ['error', 2],
+      '@stylistic/js/semi': ['error'],
+      '@stylistic/js/quotes': ['error', 'single'],
+      '@stylistic/js/comma-dangle': ['error', 'always-multiline'],
     },
   },
   
-],);
+]);
