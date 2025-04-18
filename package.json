@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "difference distiction",
-  "main": "bin/gendiff.js",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
     "test": "jest",
