@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/compare-file.js</title>
+    <title>Code coverage report for src/formatters/formatter-plain.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../prettify.css" />
-    <link rel="stylesheet" href="../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">src</a> compare-file.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/formatters</a> formatter-plain.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>18/18</span>
+                <span class='fraction'>23/23</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.15% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>25/26</span>
+                <span class='fraction'>25/25</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>18/18</span>
+                <span class='fraction'>23/23</span>
             </div>
         
             
@@ -98,74 +98,74 @@
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">41x</span>
-<span class="cline-any cline-yes">28x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { sortAndCopyObject } from "./helpers/helpers.js";
-&nbsp;
-&nbsp;
-export default function compareFile(objFirst, objSecond) {
-  const objDiff = sortAndCopyObject({ ...objFirst, ...objSecond });
-&nbsp;
-  const objResult = {};
-  for (const [key, value] of Object.entries(objDiff)) {
-    if (Object.hasOwn(objFirst, key) &amp;&amp; Object.hasOwn(objSecond, key)) {
-      if (typeof objFirst[key] === 'object' &amp;&amp; typeof objSecond[key] === 'object' &amp;&amp; !Array.isArray(objFirst[key]) &amp;&amp; !Array.isArray(objSecond[key])) {
-        objResult[`  ${key}`] = compareFile(objFirst[key], objSecond[key]);
-      } else if (objFirst[key] === objSecond[key]) {
-        objResult[`  ${key}`] = value;
-      } else {
-        objResult[`- ${key}`] = (typeof objFirst[key] === 'object' &amp;&amp; objFirst[key] !== null) ? compareFile(objFirst[key], objFirst[key]) : objFirst[key];
-        objResult[`+ ${key}`] = (typeof objSecond[key] === 'object' &amp;&amp; objSecond[key] !== null) ? <span class="branch-0 cbranch-no" title="branch not covered" >compareFile(objSecond[key], objSecond[key]) </span>: objSecond[key];
-      }
-    } else if (!Object.hasOwn(objFirst, key)) {
-      if (typeof objSecond[key] === 'object') {
-        objResult[`+ ${key}`] = compareFile(objSecond[key], objSecond[key]);
-      } else {
-        objResult[`+ ${key}`] = value;
-      }
-    } else {
-      if (typeof objFirst[key] === 'object') {
-        objResult[`- ${key}`] = compareFile(objFirst[key], objFirst[key]);
-      } else {
-        objResult[`- ${key}`] = value;
-      }
-&nbsp;
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export default function formatterPlain(json) {
+  const result = [];
+  const formatterValue = (value) =&gt; {
+    if (typeof value === 'string') {
+      return `'${value}'`;
     }
-  }
+    if(typeof value === 'object' &amp;&amp; value !== null &amp;&amp; !Array.isArray(value)){
+      return `[complex value]`;
+    }
+    return value;
+  };
+  
+  const iter = (path, json) =&gt; {
+    const keys = Object.keys(json);
+    keys.forEach((key, index, array) =&gt; {
+      if (key[0] === "+" &amp;&amp; array.includes(`-${key.slice(1)}`)) {
+        const removeValue = json[`-${key.slice(1)}`];
+        const addedValue = json[key];
+        result.push(`Property '${(`${path}.${key.slice(2)}`).slice(1)}' was updated. From ${formatterValue(removeValue)} to ${formatterValue(addedValue)}`);
+      } else if (key[0] === "+" &amp;&amp; !array.includes(`-${key.slice(1)}`)) {
+        const addedValue = json[key];
+        result.push(`Property '${(`${path}.${key.slice(2)}`).slice(1)}' was added with value: ${formatterValue(addedValue)}`);
+      } else if (key[0] === "-" &amp;&amp; !array.includes(`+${key.slice(1)}`)) {
+        result.push(`Property '${(`${path}.${key.slice(2)}`).slice(1)}' was removed`);
+      }
+      if (key[0] === " " &amp;&amp; typeof json[key] === 'object' &amp;&amp; json[key] !== null &amp;&amp; !Array.isArray(json[key])) {
+        iter(`${path}.${key.slice(2)}`, json[key]);
+      }
+    });
+  };
+  iter('', json);
 &nbsp;
-  return objResult;
-}</pre></td></tr></table></pre>
+  return result.join('\n');
+}
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
@@ -174,14 +174,14 @@ export default function compareFile(objFirst, objSecond) {
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2025-04-18T14:28:18.951Z
             </div>
-        <script src="../prettify.js"></script>
+        <script src="../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../sorter.js"></script>
-        <script src="../block-navigation.js"></script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
     </body>
 </html>
     
