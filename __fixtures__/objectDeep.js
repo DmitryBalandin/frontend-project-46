@@ -102,7 +102,6 @@ export const obgDiff = {
   },
 };
 
-
 export const obgDiff2 = {
   '  common': {
     '+ follow': false,

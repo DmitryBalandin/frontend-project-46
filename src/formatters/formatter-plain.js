@@ -4,7 +4,7 @@ export default function formatterPlain(jsonFile) {
     if (typeof value === 'string') {
       return `'${value}'`;
     }
-    if(typeof value === 'object' && value !== null && !Array.isArray(value)) {
+    if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
       return '[complex value]';
     }
     return value;

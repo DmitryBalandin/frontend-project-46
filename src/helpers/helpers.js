@@ -7,4 +7,3 @@ export const findAbsolutePath = (pathFile) => path.resolve(process.cwd(), pathFi
 export const sortAndCopyObject = (jsonFile) => Object.fromEntries(Object.entries(jsonFile).sort());
 
 export const transformYamltoJSON = (file) => yaml.load(file);
- 

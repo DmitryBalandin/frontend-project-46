@@ -13,9 +13,7 @@ program
     console.log(app(filepath1, filepath2, options.format));
   });
 
-
 program.parse();
-
 
 // gendiff file1.json file2.json
 // gendiff fileDeep1.json fileDeep2.json

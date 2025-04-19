@@ -23,6 +23,7 @@ export default defineConfig([
       '@stylistic/js/comma-spacing': ['error', { before: false, after: true }],
       '@stylistic/js/eol-last': ['error', 'always'],
       '@stylistic/js/space-before-blocks': 'error',
+      '@stylistic/js/no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0 }],
     },
   },
 

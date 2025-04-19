@@ -1,6 +1,5 @@
 import { sortAndCopyObject } from './helpers/helpers.js';
 
-
 export default function compareFile(objFirst, objSecond) {
   const objDiff = sortAndCopyObject({ ...objFirst, ...objSecond });
 
