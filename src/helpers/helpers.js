@@ -5,6 +5,8 @@ import _ from 'lodash';
 
 export const findAbsolutePath = (pathFile) => path.resolve(process.cwd(), pathFile);
 
-export const sortAndCopyObject = (jsonFile) => Object.fromEntries(_.sortBy(Object.entries(jsonFile)));
+export const sortAndCopyObject = (jsonFile) => {
+  return Object.fromEntries(_.sortBy(Object.entries(jsonFile)));
+};
 
 export const transformYamltoJSON = (file) => yaml.load(file);

@@ -31,5 +31,5 @@ export default function formatterPlain(jsonFile) {
       return undefined;
     });
   };
-  return (_.flattenDeep(iter('', jsonFile))).filter(value => value !== undefined).join('\n');
+  return (_.flattenDeep(iter('', jsonFile))).filter((value) => value !== undefined).join('\n');
 }
