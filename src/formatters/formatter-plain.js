@@ -1,7 +1,6 @@
 import _ from 'lodash';
 
 export default function formatterPlain(jsonFile) {
-  let result = [];
   const formatterValue = (value) => {
     if (typeof value === 'string') {
       return `'${value}'`;
@@ -22,7 +21,7 @@ export default function formatterPlain(jsonFile) {
         const addedValue = json[key];
         return `Property '${(`${path}.${key.slice(2)}`).slice(1)}' was added with value: ${formatterValue(addedValue)}`;
       } else if (key[0] === '-' && !array.includes(`+${key.slice(1)}`)) {
-        return result, `Property '${(`${path}.${key.slice(2)}`).slice(1)}' was removed`;
+        return  `Property '${(`${path}.${key.slice(2)}`).slice(1)}' was removed`;
       }
       if (key[0] === ' ' && typeof json[key] === 'object' && json[key] !== null && !Array.isArray(json[key])) {
         return [...iter(`${path}.${key.slice(2)}`, json[key])];
