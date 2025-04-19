@@ -24,6 +24,7 @@ export default defineConfig([
       '@stylistic/js/eol-last': ['error', 'always'],
       '@stylistic/js/space-before-blocks': 'error',
       '@stylistic/js/no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0 }],
+      '@stylistic/js/object-curly-spacing': ['error', 'always'],
     },
   },
 
