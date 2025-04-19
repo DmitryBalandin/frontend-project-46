@@ -11,22 +11,23 @@ export default function compareFile(objFirst, objSecond) {
       if (objFirst[key] === objSecond[key]) {
         return { ...acc, [`  ${key}`]: objFirst[key] };
       }
+      const keyMinus = (typeof objFirst[key] === 'object' && objFirst[key] !== null) ? compareFile(objFirst[key], objFirst[key]) : objFirst[key];
+      const keyPlus = (typeof objSecond[key] === 'object' && objSecond[key] !== null) ? compareFile(objSecond[key], objSecond[key]) : objSecond[key];
       return {
         ...acc,
-        [`- ${key}`] : (typeof objFirst[key] === 'object' && objFirst[key] !== null) ? compareFile(objFirst[key], objFirst[key]) : objFirst[key],
-        [`+ ${key}`] : (typeof objSecond[key] === 'object' && objSecond[key] !== null) ? compareFile(objSecond[key], objSecond[key]) : objSecond[key],
-      }
+        [`- ${key}`] : keyMinus,
+        [`+ ${key}`] : keyPlus,
+      };
     }
     if (!Object.hasOwn(objFirst, key)) {
       if (typeof objSecond[key] === 'object') {
-        return { ...acc, [`+ ${key}`]: compareFile(objSecond[key], objSecond[key]) }
+        return { ...acc, [`+ ${key}`]: compareFile(objSecond[key], objSecond[key]) };
       }
-      return { ...acc, [`+ ${key}`]: objSecond[key] }
-
+      return { ...acc, [`+ ${key}`]: objSecond[key] };
     }
     if (typeof objFirst[key] === 'object') {
-      return { ...acc, [`- ${key}`]: compareFile(objFirst[key], objFirst[key]) }
+      return { ...acc, [`- ${key}`]: compareFile(objFirst[key], objFirst[key]) };
     }
     return { ...acc, [`- ${key}`]: objFirst[key] };
-  }, {})
+  }, {});
 }
