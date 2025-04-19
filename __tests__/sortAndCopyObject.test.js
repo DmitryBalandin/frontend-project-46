@@ -1,6 +1,6 @@
 import { sortAndCopyObject } from '../src/helpers/helpers.js';
 import _ from 'lodash';
-import { obj1,obj2 } from '../__fixtures__/objects.js';
+import { obj1, obj2 } from '../__fixtures__/objects.js';
 
 test('Object is empty', () => {
   expect(sortAndCopyObject({})).toEqual({});
@@ -8,10 +8,10 @@ test('Object is empty', () => {
 
 test('sort object', () => {
   expect(sortAndCopyObject(obj1)).toEqual({
-    'follow': false,
-    'host': 'hexlet.io',
-    'proxy': '123.234.53.22',
-    'timeout': 50,
+    follow: false,
+    host: 'hexlet.io',
+    proxy: '123.234.53.22',
+    timeout: 50,
   });
   expect(sortAndCopyObject(obj1) === obj1).toBeFalsy();
 });

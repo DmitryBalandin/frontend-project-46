@@ -16,13 +16,13 @@ test('wrong extension', () => {
 });
 
 test('eqaul difference extension', () => {
-  expect(parse(bufferFileJson, '.json')).toEqual(parse(bufferFileYaml,'.yaml'));
-  expect(parse(bufferFileJsonDeep, '.json')).toEqual(parse(bufferFileYamlDeep,'.yaml'));
+  expect(parse(bufferFileJson, '.json')).toEqual(parse(bufferFileYaml, '.yaml'));
+  expect(parse(bufferFileJsonDeep, '.json')).toEqual(parse(bufferFileYamlDeep, '.yaml'));
 });
 
 test('parse  obj json and yaml', () => {
   expect(parse(bufferFileJson, '.json')).toEqual(obj1);
-  expect(parse(bufferFileYaml,'.yaml')).toEqual(obj1);
+  expect(parse(bufferFileYaml, '.yaml')).toEqual(obj1);
 });
 
 test('return difference result with difference argument', () => {
@@ -31,5 +31,5 @@ test('return difference result with difference argument', () => {
 
 test('parse objDeep json and yaml', () => {
   expect(parse(bufferFileJsonDeep, '.json')).toEqual(objDeep1);
-  expect(parse(bufferFileYamlDeep,'.yaml')).toEqual(objDeep1);
+  expect(parse(bufferFileYamlDeep, '.yaml')).toEqual(objDeep1);
 });
