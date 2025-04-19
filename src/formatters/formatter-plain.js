@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export default function formatterPlain(jsonFile) {
   let result = [];
   const formatterValue = (value) => {
@@ -9,26 +11,24 @@ export default function formatterPlain(jsonFile) {
     }
     return value;
   };
-  
   const iter = (path, json) => {
     const keys = Object.keys(json);
-    keys.forEach((key, index, array) => {
+    const lines = keys.map((key, index, array) =>{
       if (key[0] === '+' && array.includes(`-${key.slice(1)}`)) {
         const removeValue = json[`-${key.slice(1)}`];
         const addedValue = json[key];
-        result = [...result, `Property '${(`${path}.${key.slice(2)}`).slice(1)}' was updated. From ${formatterValue(removeValue)} to ${formatterValue(addedValue)}`];
+        return `Property '${(`${path}.${key.slice(2)}`).slice(1)}' was updated. From ${formatterValue(removeValue)} to ${formatterValue(addedValue)}`;
       } else if (key[0] === '+' && !array.includes(`-${key.slice(1)}`)) {
         const addedValue = json[key];
-        result = [...result, `Property '${(`${path}.${key.slice(2)}`).slice(1)}' was added with value: ${formatterValue(addedValue)}`];
+        return `Property '${(`${path}.${key.slice(2)}`).slice(1)}' was added with value: ${formatterValue(addedValue)}`;
       } else if (key[0] === '-' && !array.includes(`+${key.slice(1)}`)) {
-        result = [...result, `Property '${(`${path}.${key.slice(2)}`).slice(1)}' was removed`];
+        return result, `Property '${(`${path}.${key.slice(2)}`).slice(1)}' was removed`;
       }
       if (key[0] === ' ' && typeof json[key] === 'object' && json[key] !== null && !Array.isArray(json[key])) {
-        iter(`${path}.${key.slice(2)}`, json[key]);
+        return [...iter(`${path}.${key.slice(2)}`, json[key])];
       }
     });
+    return lines;
   };
-  iter('', jsonFile);
-
-  return result.join('\n');
+  return (_.flattenDeep(iter('', jsonFile))).filter(value=> value !== undefined).join('\n');
 }
