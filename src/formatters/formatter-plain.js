@@ -12,22 +12,24 @@ export default function formatterPlain(jsonFile) {
   };
   const iter = (path, json) => {
     const keys = Object.keys(json);
-    const lines = keys.map((key, index, array) =>{
+    return keys.map((key, index, array) => {
       if (key[0] === '+' && array.includes(`-${key.slice(1)}`)) {
         const removeValue = json[`-${key.slice(1)}`];
         const addedValue = json[key];
         return `Property '${(`${path}.${key.slice(2)}`).slice(1)}' was updated. From ${formatterValue(removeValue)} to ${formatterValue(addedValue)}`;
-      } else if (key[0] === '+' && !array.includes(`-${key.slice(1)}`)) {
+      }
+      if (key[0] === '+' && !array.includes(`-${key.slice(1)}`)) {
         const addedValue = json[key];
         return `Property '${(`${path}.${key.slice(2)}`).slice(1)}' was added with value: ${formatterValue(addedValue)}`;
-      } else if (key[0] === '-' && !array.includes(`+${key.slice(1)}`)) {
-        return  `Property '${(`${path}.${key.slice(2)}`).slice(1)}' was removed`;
+      }
+      if (key[0] === '-' && !array.includes(`+${key.slice(1)}`)) {
+        return `Property '${(`${path}.${key.slice(2)}`).slice(1)}' was removed`;
       }
       if (key[0] === ' ' && typeof json[key] === 'object' && json[key] !== null && !Array.isArray(json[key])) {
         return [...iter(`${path}.${key.slice(2)}`, json[key])];
       }
+      return undefined;
     });
-    return lines;
   };
-  return (_.flattenDeep(iter('', jsonFile))).filter(value=> value !== undefined).join('\n');
+  return (_.flattenDeep(iter('', jsonFile))).filter(value => value !== undefined).join('\n');
 }

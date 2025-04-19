@@ -3,7 +3,7 @@ import path from 'path';
 import { findAbsolutePath } from './helpers/helpers.js';
 import parse from './parse.js';
 import compareFile from './compare-file.js';
-import formatter from '../src/formatters/index.js';
+import formatter from './formatters/index.js';
 
 export default (path1, path2, format) => {
   const absolutePath1 = findAbsolutePath(path1);
