@@ -15,14 +15,15 @@ export default defineConfig([
       'no-undef': 'warn',
       '@stylistic/js/no-multi-spaces': 'error',
       '@stylistic/js/no-extra-semi': 'error',
-      '@stylistic/js/indent': ['error', 2],
+      '@stylistic/js/indent': ['error', 2, { SwitchCase: 1 }],
       '@stylistic/js/semi': ['error'],
       '@stylistic/js/quotes': ['error', 'single'],
       '@stylistic/js/comma-dangle': ['error', 'always-multiline'],
       '@stylistic/js/quote-props': ['error', 'as-needed'],
       '@stylistic/js/comma-spacing': ['error', { before: false, after: true }],
-
+      '@stylistic/js/eol-last': ['error', 'always'],
+      '@stylistic/js/space-before-blocks': 'error',
     },
   },
-  
+
 ]);

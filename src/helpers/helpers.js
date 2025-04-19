@@ -1,6 +1,5 @@
 import path from 'path';
 import process from 'process';
-import _ from 'lodash';
 import yaml from 'js-yaml';
 
 export const findAbsolutePath = (pathFile) => path.resolve(process.cwd(), pathFile);
