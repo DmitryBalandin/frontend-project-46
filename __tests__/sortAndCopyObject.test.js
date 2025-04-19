@@ -1,5 +1,5 @@
-import { sortAndCopyObject } from '../src/helpers/helpers.js';
 import _ from 'lodash';
+import { sortAndCopyObject } from '../src/helpers/helpers.js';
 import { obj1, obj2 } from '../__fixtures__/objects.js';
 
 test('Object is empty', () => {

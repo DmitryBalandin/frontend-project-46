@@ -19,8 +19,7 @@ export const objSort1 = {
 export const objSort2 = {
   host: 'hexlet.io',
   timeout: 20,
-  verbose: true,
-    
+  verbose: true,  
 };
 
 export const diffObj1WithObj2 = {
