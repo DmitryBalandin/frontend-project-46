@@ -15,8 +15,8 @@ export default function compareFile(objFirst, objSecond) {
       const keyPlus = (typeof objSecond[key] === 'object' && objSecond[key] !== null) ? compareFile(objSecond[key], objSecond[key]) : objSecond[key];
       return {
         ...acc,
-        [`- ${key}`] : keyMinus,
-        [`+ ${key}`] : keyPlus,
+        [`- ${key}`]: keyMinus,
+        [`+ ${key}`]: keyPlus,
       };
     }
     if (!Object.hasOwn(objFirst, key)) {

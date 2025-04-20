@@ -1,11 +1,26 @@
-import js from '@eslint/js';
+import pluginJs from '@eslint/js';
 import globals from 'globals';
-import { defineConfig } from 'eslint/config';
 import stylisticJs from '@stylistic/eslint-plugin-js';
 
-export default defineConfig([
-  { files: ['**/*.{js,mjs,cjs}'], plugins: { js }, extends: ['js/recommended'] },
-  { files: ['**/*.{js,mjs,cjs}'], languageOptions: { globals: { ...globals.browser, ...globals.node } } },
+export default [
+  pluginJs.configs.recommended,
+  {
+    files: [
+      '**/*.{js}',
+    ],
+  },
+  {
+    ignores: ['dist/'],
+  },
+  {
+    languageOptions: {
+      globals: globals.node,
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
   {
     plugins: {
       '@stylistic/js': stylisticJs,
@@ -27,5 +42,4 @@ export default defineConfig([
       '@stylistic/js/object-curly-spacing': ['error', 'always'],
     },
   },
-
-]);
+];
