@@ -1,6 +1,6 @@
-import pluginJs from '@eslint/js';
-import globals from 'globals';
-import stylisticJs from '@stylistic/eslint-plugin-js';
+import pluginJs from '@eslint/js'
+import globals from 'globals'
+import stylisticJs from '@stylistic/eslint-plugin-js'
 
 export default [
   pluginJs.configs.recommended,
@@ -31,7 +31,7 @@ export default [
       '@stylistic/js/no-multi-spaces': 'error',
       '@stylistic/js/no-extra-semi': 'error',
       '@stylistic/js/indent': ['error', 2, { SwitchCase: 1 }],
-      '@stylistic/js/semi': ['error'],
+      '@stylistic/js/semi': ['error', 'never'],
       '@stylistic/js/quotes': ['error', 'single'],
       '@stylistic/js/comma-dangle': ['error', 'always-multiline'],
       '@stylistic/js/quote-props': ['error', 'as-needed'],
@@ -40,6 +40,7 @@ export default [
       '@stylistic/js/space-before-blocks': 'error',
       '@stylistic/js/no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0 }],
       '@stylistic/js/object-curly-spacing': ['error', 'always'],
+      '@stylistic/js/keyword-spacing': ['error'],
     },
   },
-];
+]

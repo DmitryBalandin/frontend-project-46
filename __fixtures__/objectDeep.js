@@ -23,7 +23,7 @@ export const objDeep1 = {
       id: 45,
     },
   },
-};
+}
 
 export const objDeep2 = {
   common: {
@@ -55,7 +55,7 @@ export const objDeep2 = {
     },
     fee: 100500,
   },
-};
+}
 
 export const obgDiff = {
   common: {
@@ -100,7 +100,7 @@ export const obgDiff = {
     },
     fee: 100500,
   },
-};
+}
 
 export const obgDiff2 = {
   '  common': {
@@ -145,7 +145,7 @@ export const obgDiff2 = {
     },
     '  fee': 100500,
   },
-};
+}
 
 export const obgDiffNew = {
   common: {
@@ -242,4 +242,4 @@ export const obgDiffNew = {
       fee: 100500,
     },
   },
-};
+}

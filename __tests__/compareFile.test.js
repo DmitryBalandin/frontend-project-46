@@ -1,23 +1,23 @@
-import _ from 'lodash';
-import compareFile from '../src/compare.js';
+import _ from 'lodash'
+import compareFile from '../src/compare.js'
 import {
   objSort1, objSort2,
   diffObj1WithObj2, diffObj2WithObj1,
-} from '../__fixtures__/objects.js';
-import { objDeep1, objDeep2, obgDiff2, obgDiffNew } from '../__fixtures__/objectDeep.js';
+} from '../__fixtures__/objects.js'
+import { objDeep1, objDeep2, obgDiff2, obgDiffNew } from '../__fixtures__/objectDeep.js'
 
 test('Object is empty', () => {
-  expect(compareFile({}, {})).toEqual({});
-});
+  expect(compareFile({}, {})).toEqual({})
+})
 
 test('compare object', () => {
-  expect(compareFile(objSort1, objSort2)).toEqual(diffObj1WithObj2);
-  expect(compareFile(objSort2, objSort1)).toEqual(diffObj2WithObj1);
-});
+  expect(compareFile(objSort1, objSort2)).toEqual(diffObj1WithObj2)
+  expect(compareFile(objSort2, objSort1)).toEqual(diffObj2WithObj1)
+})
 
 test('compare two  deep object', () => {
-  expect(compareFile(objDeep1, objDeep2)).toEqual(obgDiffNew);
-});
+  expect(compareFile(objDeep1, objDeep2)).toEqual(obgDiffNew)
+})
 
 // test('not mutantion obj', () => {
 //   const objClone = _.cloneDeep(objSort1);
