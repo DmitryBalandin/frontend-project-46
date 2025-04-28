@@ -11,3 +11,11 @@ export const sortAndCopyObject = (jsonFile) => {
 };
 
 export const transformYamltoJSON = (file) => yaml.load(file);
+
+export const isCompareValue = (value) => {
+  if (typeof value === 'object' && value !== null) {
+    if ((Object.hasOwn(value, 'mark')) && (Object.hasOwn(value, 'from')) && (Object.hasOwn(value, 'to')))
+      return true;
+  }
+  return false;
+};

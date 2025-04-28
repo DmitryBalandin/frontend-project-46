@@ -146,3 +146,100 @@ export const obgDiff2 = {
     '  fee': 100500,
   },
 };
+
+export const obgDiffNew = {
+  common: {
+    follow: {
+      mark: 'add',
+      from: null,
+      to: false,
+    },
+    setting1: {
+      mark: 'unchange',
+      from: 'Value 1',
+      to: 'Value 1',
+    },
+    setting2: {
+      mark: 'delete',
+      from: 200,
+      to: null,
+    },
+    setting3: {
+      mark: 'change',
+      from: true,
+      to: null,
+    },
+    setting4: {
+      mark: 'add',
+      from: null,
+      to: 'blah blah',
+    },
+    setting5: {
+      mark: 'add',
+      from: null,
+      to: {
+        key5: 'value5',
+      },
+    },
+    setting6: {
+      doge: {
+        wow: {
+          mark: 'change',
+          from: '',
+          to: 'so much',
+        },
+      },
+      key: {
+        mark: 'unchange',
+        from: 'value',
+        to: 'value',
+      },
+      ops: {
+        mark: 'add',
+        from: null,
+        to: 'vops',
+      },
+    },
+  },
+  group1: {
+    baz: {
+      mark: 'change',
+      from: 'bas',
+      to: 'bars',
+    },
+    foo: {
+      mark: 'unchange',
+      from: 'bar',
+      to: 'bar',
+    },
+    nest: {
+      mark: 'change',
+      from: {
+        key: 'value',
+      },
+      to: 'str',
+    },
+  },
+  group2: {
+    mark: 'delete',
+    from: {
+      abc: 12345,
+      deep: {
+        id: 45,
+      },
+    },
+    to: null,
+  },
+  group3: {
+    mark: 'add',
+    from: null,
+    to: {
+      deep: {
+        id: {
+          number: 45,
+        },
+      },
+      fee: 100500,
+    },
+  },
+};

@@ -3,12 +3,12 @@ import path from 'path';
 import process from 'process';
 import formatterStylich from '../src/formatters/formatter-stylish.js';
 import formatterPlain from '../src/formatters/formatter-plain.js';
-import { obgDiff2 } from '../__fixtures__/objectDeep.js';
+import { obgDiffNew } from '../__fixtures__/objectDeep.js';
 import { diffObj1WithObj2 } from '../__fixtures__/objects.js';
 
 test('formatting obj with style = stylich', () => {
   const formatObj = fs.readFileSync(path.resolve(process.cwd(), '__fixtures__', 'formattObj.txt'), 'utf-8');
-  expect(formatterStylich(obgDiff2)).toEqual(formatObj.trim());
+  expect(formatterStylich(obgDiffNew)).toEqual(formatObj.trim());
 });
 
 test('formatting simple obj with style = plain', () => {
@@ -18,5 +18,5 @@ test('formatting simple obj with style = plain', () => {
 
 test('formatting objDeep with style = plain', () => {
   const formatObj = fs.readFileSync(path.resolve(process.cwd(), '__fixtures__', 'formattObjP-plain.txt'), 'utf-8');
-  expect(formatterPlain(obgDiff2, 'plain')).toEqual(formatObj.trim());
+  expect(formatterPlain(obgDiffNew, 'plain')).toEqual(formatObj.trim());
 });

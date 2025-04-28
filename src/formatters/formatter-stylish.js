@@ -1,3 +1,5 @@
+import { isCompareValue } from '../helpers/helpers.js';
+
 export default function formatterStylich(json) {
   const replacer = ' ';
   const spacesCount = 4;
@@ -10,7 +12,25 @@ export default function formatterStylich(json) {
     const bracketIndent = replacer.repeat(indentSize - spacesCount);
     const lines = Object
       .entries(currentValue)
-      .map(([key, val]) => `${currentIndent}${key}: ${iter(val, depth + 1)}`);
+      .map(([key, val]) => {
+        if(isCompareValue(val)) {
+          const mark = val.mark;
+          if(mark === 'add') {
+            return `${currentIndent}${`+ ${key}`}: ${iter(val.to, depth + 1)}`;
+          }
+          if(mark === 'unchange') {
+            return `${currentIndent}${`  ${key}`}: ${iter(val.from, depth + 1)}`;
+          }
+          if(mark === 'delete') {
+            return `${currentIndent}${`- ${key}`}: ${iter(val.from, depth + 1)}`;
+          }
+          if(mark === 'change') {
+            return [`${currentIndent}${`- ${key}`}: ${iter(val.from, depth + 1)}`,
+              `${currentIndent}${`+ ${key}`}: ${iter(val.to, depth + 1)}`].join('\n');
+          }
+        }
+        return `${currentIndent}${'  ' + key}: ${iter(val, depth + 1)}`;
+      });
 
     return [
       '{',
