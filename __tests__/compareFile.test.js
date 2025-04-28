@@ -1,10 +1,9 @@
-import _ from 'lodash'
 import compareFile from '../src/compare.js'
 import {
   objSort1, objSort2,
   diffObj1WithObj2, diffObj2WithObj1,
 } from '../__fixtures__/objects.js'
-import { objDeep1, objDeep2, obgDiff2, obgDiffNew } from '../__fixtures__/objectDeep.js'
+import { objDeep1, objDeep2, obgDiffNew } from '../__fixtures__/objectDeep.js'
 
 test('Object is empty', () => {
   expect(compareFile({}, {})).toEqual({})

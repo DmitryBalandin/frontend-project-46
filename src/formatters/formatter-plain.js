@@ -12,7 +12,7 @@ export default function formatterPlain(jsonFile) {
   }
   const iter = (path, json) => {
     const keys = Object.keys(json)
-    return keys.map((key, index, array) => {
+    return keys.map((key) => {
       if (isCompareValue(json[key])) {
         const mark = json[key].mark
         if (mark === 'change') {
@@ -28,12 +28,11 @@ export default function formatterPlain(jsonFile) {
           return `Property '${(`${path}.${key}`).slice(1)}' was removed`
         }
       }
-      
       if (typeof json[key] === 'object' && json[key] !== null && !Array.isArray(json[key])) {
         return [...iter(`${path}.${key}`, json[key])]
       }
       return undefined
     })
   }
-  return (_.flattenDeep(iter('', jsonFile))).filter((value) => value !== undefined).join('\n')
+  return (_.flattenDeep(iter('', jsonFile))).filter(value => value !== undefined).join('\n')
 }
