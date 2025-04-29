@@ -17,8 +17,6 @@ export default function compare(objFirst, objSecond) {
           },
         }
       }
-      // const keyMinus = (typeof objFirst[key] === 'object' && objFirst[key] !== null) ? compareFile(objFirst[key], objFirst[key]) : objFirst[key];
-      // const keyPlus = (typeof objSecond[key] === 'object' && objSecond[key] !== null) ? compareFile(objSecond[key], objSecond[key]) : objSecond[key];
       return {
         ...acc,
         [key]: {
@@ -29,9 +27,6 @@ export default function compare(objFirst, objSecond) {
       }
     }
     if (!Object.hasOwn(objFirst, key)) {
-      // if (typeof objSecond[key] === 'object') {
-      //   return { ...acc, [`+ ${key}`]: compareFile(objSecond[key], objSecond[key]) };
-      // }
       return {
         ...acc, [key]: {
           mark: 'add',
@@ -40,9 +35,6 @@ export default function compare(objFirst, objSecond) {
         },
       }
     }
-    // if (typeof objFirst[key] === 'object') {
-    //   return { ...acc, [`- ${key}`]: compareFile(objFirst[key], objFirst[key]) };
-    // }
     return {
       ...acc, [key]: {
         mark: 'delete',
